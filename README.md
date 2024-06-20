@@ -1,3 +1,2 @@
 # MyKitchen
-# MyKitchen
-# MyKitchen
+MyKitchen is an application that allows users to manage and keep track of the food they store in their kitchen. Each food item has useful data such as the bought and expiry dates, and where exactly they have stored the food within their kitchen, such as their fridge, freezer or pantry. 

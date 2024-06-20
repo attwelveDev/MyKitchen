@@ -1,0 +1,10 @@
+com
+└───aaronnguyen
+    └───mykitchen
+        ├───DAO
+        ├───Service
+        ├───models
+        ├───repository
+        ├───simulator
+        └───ui
+            └───folders depending on parts of app

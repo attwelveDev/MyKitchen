@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+
+
+
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyKitchen"
+        tools:targetApi="31">
+
+
+        <service
+            android:name=".Service.ExpiryCheckService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync">
+        </service>
+
+        <service
+            android:name=".Service.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name=".Service.ExpiryCheckService$ExpiryCheckReceiver"
+            android:enabled="true"/>
+
+        <receiver android:name=".ScheduleAlarms.ItemUseScheduleAlarm.ItemUseScheduleReceiver"/>
+        <receiver
+            android:name=".ScheduleAlarms.CartScheduleAlarm.CartScheduleReceiver"
+            android:enabled="true"/>
+
+        <activity
+            android:name=".ui.other.setting.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.other.allkitchen.AllKitchensActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.Overview.KitchenOverviewFragment"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.KitchenHomeActivity"
+            android:exported="true"
+            android:label="@string/title_activity_kitchen_home"
+            android:theme="@style/Theme.MyKitchen.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".ui.main.Chat.ChatFragment"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.History.HistoryFragment"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.ShoppingCart.ShoppingCartFragment"
+            android:exported="false" />
+        <activity
+            android:name=".ui.other.managekitchen.ManageKitchenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.other.Search.SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.Notification.KitchenNotificationFragment"
+            android:exported="false" />
+        <activity
+            android:name=".ui.other.login.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

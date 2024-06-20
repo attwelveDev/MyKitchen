@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "433276795971",
+    "project_id": "mykitchen-e583f",
+    "storage_bucket": "mykitchen-e583f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:433276795971:android:91db00ba1f0a40b46268f6",
+        "android_client_info": {
+          "package_name": "com.aaronnguyen.mykitchen"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDb1W2eNr6QoKvKMRO02bqLdNRrumLsaLg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
